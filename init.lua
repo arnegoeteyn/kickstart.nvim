@@ -191,13 +191,17 @@ require('telescope').setup {
     -- Your special builtin config goes in here
     buffers = {
       sort_lastused = true,
-    }
+      mappings = {
+        i = {
+          ['<C-d>'] = "delete_buffer",
+        }
+      }
+    },
   },
   defaults = {
     mappings = {
       i = {
         ['<C-u>'] = false,
-        ['<C-d>'] = false,
         ['<C-l>'] = require('telescope.actions.layout').toggle_preview,
       },
     },
@@ -237,7 +241,7 @@ vim.keymap.set('n', '<C-l>', '<C-w>l', {desc = 'Move to right pane'})
 -- See `:help nvim-treesitter`
 require('nvim-treesitter.configs').setup {
   -- Add languages to be installed here that you want installed for treesitter
-  ensure_installed = { 'c', 'cpp', 'go', 'lua', 'python', 'rust', 'typescript', 'help', 'vim' },
+  ensure_installed = { 'c', 'cpp', 'go', 'lua', 'python', 'rust', 'typescript', 'vim', 'elixir', 'heex' },
 
   highlight = { enable = true },
   indent = { enable = true, disable = { 'python' } },
@@ -360,7 +364,7 @@ local servers = {
   -- rust_analyzer = {},
   -- tsserver = {},
 
-  sumneko_lua = {
+  lua_ls = {
     Lua = {
       workspace = { checkThirdParty = false },
       telemetry = { enable = false },
@@ -475,5 +479,24 @@ vim.g.move_normal_option=1
 
 vim.opt.relativenumber = true
 
+-- Close all buffers except current
+vim.api.nvim_create_user_command("BufOnly", "%bd|e#|bd#", {})
+
+
 -- The line beneath this is called `modeline`. See `:help modeline`
 -- vim: ts=2 sts=2 sw=2 et
+
+
+-- Folding
+-- vim.opt.foldmethod = "expr"
+-- vim.opt.foldexpr = "nvim_treesitter#foldexpr()"
+-- vim.opt.foldlevel = 3
+
+-- vim.api.nvim_create_autocmd("BufReadPost,FileReadPost", "*", "normal zR")
+
+-- vim.api.nvim_create_autocmd('BufReadPost, FileReadPost', {
+  -- callback = function ()
+  --   vim.cmd.normal('zR')
+  -- end
+--   command = vim.cmd.normal('zR')
+-- })

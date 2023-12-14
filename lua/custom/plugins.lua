@@ -3,7 +3,7 @@ return function(use)
     "sainnhe/edge", -- color scheme
   })
   use({
-    "justinmk/vim-dirvish"
+    "justinmk/vim-dirvish" -- explore with -
   })
   -- use {
   --   'mrcjkb/haskell-tools.nvim',
@@ -13,7 +13,7 @@ return function(use)
   --   branch = '1.x.x', -- recommended
   -- }
   use {
-    'rmagatti/auto-session',
+    'rmagatti/auto-session', -- save sessions
     config = function()
       require("auto-session").setup {
         log_level = "error",
@@ -28,10 +28,6 @@ return function(use)
     "matze/vim-move"
   }
   use {
-    "axelf4/vim-strip-trailing-whitespace"
+    "christoomey/vim-tmux-navigator"
   }
-  use {
-    "direnv/direnv.vim"
-  }
-
 end

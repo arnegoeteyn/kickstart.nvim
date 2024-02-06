@@ -49,8 +49,8 @@ local function save_profiles(threshold)
 end
 
 time([[Luarocks path setup]], true)
-local package_path_str = "/home/arne/.cache/nvim/packer_hererocks/2.1.0-beta3/share/lua/5.1/?.lua;/home/arne/.cache/nvim/packer_hererocks/2.1.0-beta3/share/lua/5.1/?/init.lua;/home/arne/.cache/nvim/packer_hererocks/2.1.0-beta3/lib/luarocks/rocks-5.1/?.lua;/home/arne/.cache/nvim/packer_hererocks/2.1.0-beta3/lib/luarocks/rocks-5.1/?/init.lua"
-local install_cpath_pattern = "/home/arne/.cache/nvim/packer_hererocks/2.1.0-beta3/lib/lua/5.1/?.so"
+local package_path_str = "/home/arne/.cache/nvim/packer_hererocks/2.1.1692716794/share/lua/5.1/?.lua;/home/arne/.cache/nvim/packer_hererocks/2.1.1692716794/share/lua/5.1/?/init.lua;/home/arne/.cache/nvim/packer_hererocks/2.1.1692716794/lib/luarocks/rocks-5.1/?.lua;/home/arne/.cache/nvim/packer_hererocks/2.1.1692716794/lib/luarocks/rocks-5.1/?/init.lua"
+local install_cpath_pattern = "/home/arne/.cache/nvim/packer_hererocks/2.1.1692716794/lib/lua/5.1/?.so"
 if not string.find(package.path, package_path_str, 1, true) then
   package.path = package.path .. ';' .. package_path_str
 end
@@ -99,11 +99,6 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/arne/.local/share/nvim/site/pack/packer/start/cmp_luasnip",
     url = "https://github.com/saadparwaiz1/cmp_luasnip"
-  },
-  ["direnv.vim"] = {
-    loaded = true,
-    path = "/home/arne/.local/share/nvim/site/pack/packer/start/direnv.vim",
-    url = "https://github.com/direnv/direnv.vim"
   },
   edge = {
     loaded = true,
@@ -183,7 +178,7 @@ _G.packer_plugins = {
     url = "https://github.com/nvim-lua/plenary.nvim"
   },
   ["telescope-fzf-native.nvim"] = {
-    cond = { true },
+    cond = { false },
     loaded = false,
     needs_bufread = false,
     only_cond = true,
@@ -220,15 +215,15 @@ _G.packer_plugins = {
     path = "/home/arne/.local/share/nvim/site/pack/packer/start/vim-sleuth",
     url = "https://github.com/tpope/vim-sleuth"
   },
-  ["vim-strip-trailing-whitespace"] = {
-    loaded = true,
-    path = "/home/arne/.local/share/nvim/site/pack/packer/start/vim-strip-trailing-whitespace",
-    url = "https://github.com/axelf4/vim-strip-trailing-whitespace"
-  },
   ["vim-surround"] = {
     loaded = true,
     path = "/home/arne/.local/share/nvim/site/pack/packer/start/vim-surround",
     url = "https://github.com/tpope/vim-surround"
+  },
+  ["vim-tmux-navigator"] = {
+    loaded = true,
+    path = "/home/arne/.local/share/nvim/site/pack/packer/start/vim-tmux-navigator",
+    url = "https://github.com/christoomey/vim-tmux-navigator"
   }
 }
 
